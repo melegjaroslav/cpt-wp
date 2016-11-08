@@ -166,11 +166,11 @@ class Custom_Post_Types_Admin {
 
 			$slug	= $input['slug'];
 
-			$file = '/var/www/html/podometric/wp-content/plugins/posttypes.php';
+			//Absolute path to posttypes.php file
+			$file = PATH_TO_PLUGIN . 'post-args.php';
 			if (is_writable($file)) {
 			    $current = file_get_contents($file);
-
-			    $current = substr($current, 0, -1);
+			    //$current = substr($current, 0, -1);
 			    $current .=  "\n" . "\t" . '$slug = ' .'"'. $slug .'"'. ";" . "\n" . "\n" . "\t" .
 
 				"\$labels = array(" . "\n". "\t" . "\t" .
@@ -195,11 +195,14 @@ class Custom_Post_Types_Admin {
 		        '\'' . "supports" . '\'' . '=>' . 'array(' .'\'title\', \'editor\', \'thumbnail\''. '),' . "\n" . "\t" .
 		    	");" . "\n" . "\t" .
 
-		    	"register_post_type(\$slug, \$args);" . "\n" .
-		    	"}";
+		    	"register_post_type(\$slug, \$args);" . "\n" ;
+		    	
 
 
 			    file_put_contents($file, $current);
+			}
+			else{
+				die("Cannot Write To File");
 			}
 		}
 	}

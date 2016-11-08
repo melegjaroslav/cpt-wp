@@ -13,10 +13,10 @@
  * @package           Custom_Post_Types
  *
  * @wordpress-plugin
- * Plugin Name:       Custom Post Types
+ * Plugin Name:       CPT Generator
  * Description:       Add custom post types.
  * Version:           1.0.0
- * Author:            Jaroslav
+ * Author:            Jaroslav Meleg
  * Author URI:        melegjaroslav.github.io
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -28,6 +28,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 
 /**
  * The code that runs during plugin activation.
@@ -72,3 +73,5 @@ function run_custom_post_types() {
 
 }
 run_custom_post_types();
+
+define('PATH_TO_PLUGIN', plugin_dir_path( __FILE__ ));
