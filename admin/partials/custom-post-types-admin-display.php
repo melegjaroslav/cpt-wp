@@ -62,42 +62,42 @@
         <!-- Hierarchical -->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-hierarchical">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hierarchical" name="<?php echo $this->plugin_name; ?> [hierarchical]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hierarchical" name="<?php echo $this->plugin_name; ?> [hierarchical]" value="true" checked/>
                 <span><?php esc_attr_e('Hierarchical', $this->plugin_name); ?></span>
             </label>
         </fieldset>
         <!-- Public -->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-public">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-public" name="<?php echo $this->plugin_name; ?> [public]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-public" name="<?php echo $this->plugin_name; ?> [public]" value="true" checked/>
                 <span><?php esc_attr_e('public', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Show UI-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-show-ui">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-ui" name="<?php echo $this->plugin_name; ?> [show-ui]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-ui" name="<?php echo $this->plugin_name; ?> [show-ui]" value="true" checked/>
                 <span><?php esc_attr_e('show-ui', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Show In Menu-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-show-in-menu">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-menu" name="<?php echo $this->plugin_name; ?> [show-in-menu]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-menu" name="<?php echo $this->plugin_name; ?> [show-in-menu]" value="true" checked/>
                 <span><?php esc_attr_e('show-in-menu', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Show In Nav Menus-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-show-in-nav-menus">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-nav-menus" name="<?php echo $this->plugin_name; ?> [show-in-nav-menus]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-nav-menus" name="<?php echo $this->plugin_name; ?> [show-in-nav-menus]" value="true" checked/>
                 <span><?php esc_attr_e('show-in-nav-menus', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Show In Admin Bar-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-show-in-admin-bar">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-admin-bar" name="<?php echo $this->plugin_name; ?> [show-in-admin-bar]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-show-in-admin-bar" name="<?php echo $this->plugin_name; ?> [show-in-admin-bar]" value="true" checked/>
                 <span><?php esc_attr_e('show-in-admin-bar', $this->plugin_name); ?></span>
             </label>
         </fieldset>
@@ -111,28 +111,28 @@
 		<!-- Can Export-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-can-export">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-can-export" name="<?php echo $this->plugin_name; ?> [can-export]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-can-export" name="<?php echo $this->plugin_name; ?> [can-export]" value="true" checked/>
                 <span><?php esc_attr_e('can-export', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Has Archive-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-has-archive">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-has-archive" name="<?php echo $this->plugin_name; ?> [has-archive]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-has-archive" name="<?php echo $this->plugin_name; ?> [has-archive]" value="true" checked/>
                 <span><?php esc_attr_e('has-archive', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Exclude From Search-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-exclude-from-serach">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-exclude-from-serach" name="<?php echo $this->plugin_name; ?> [exclude-from-serach]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-exclude-from-serach" name="<?php echo $this->plugin_name; ?> [exclude-from-serach]" value="true" checked/>
                 <span><?php esc_attr_e('exclude-from-serach', $this->plugin_name); ?></span>
             </label>
         </fieldset>
 		<!-- Publicly Queryable-->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-publicly-queryable">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-publicly-queryable" name="<?php echo $this->plugin_name; ?> [publicly-queryable]" value="true"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-publicly-queryable" name="<?php echo $this->plugin_name; ?> [publicly-queryable]" value="true" checked/>
                 <span><?php esc_attr_e('publicly-queryable', $this->plugin_name); ?></span>
             </label>
         </fieldset>
@@ -146,7 +146,7 @@
          <!-- Supports -->
         <fieldset>
             <label for="<?php echo $this->plugin_name; ?>-supports">
-                <input type="text" id="<?php echo $this->plugin_name; ?>-supports" name="<?php echo $this->plugin_name; ?> [supports]" value="'title', 'editor', 'thumbnail'">
+                <input type="text" id="<?php echo $this->plugin_name; ?>-supports" name="<?php echo $this->plugin_name; ?> [supports]" value="title, editor, thumbnail">
             </label>
             <span><?php esc_attr_e('supports', $this->plugin_name); ?></span>
         </fieldset> 

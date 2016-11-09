@@ -146,7 +146,7 @@ class Custom_Post_Types_Admin {
 	    return $valid;
 	}
 
-		function simple_register_single_posttype($input){
+	function simple_register_single_posttype($input){
 
 		if(!empty($input)){
 			$name 			= $input['namepl'];
@@ -162,22 +162,26 @@ class Custom_Post_Types_Admin {
 			$cabability_type	= $input['capability-type'];
 			$has_archive		= $input['has-archive'];
 			$hierarchical		= $input['hierarchical'];
-			$supports			= $input['supports'];
+			$description		= $input['description'];
 
 			$slug	= $input['slug'];
+				
+			$supports = $input['supports'];
 
-			//Absolute path to posttypes.php file
+			//Absolute path to post-args.php file
 			$file = PATH_TO_PLUGIN . 'post-args.php';
 			if (is_writable($file)) {
 			    $current = file_get_contents($file);
-			    //$current = substr($current, 0, -1);
 			    $current .=  "\n" . "\t" . '$slug = ' .'"'. $slug .'"'. ";" . "\n" . "\n" . "\t" .
 
+			    '$supports = ' .'"'. $supports .'"'. ";" . "\n" . "\n" . "\t" .
+			    "\$supports = explode(', ',\$supports,10);" . "\n" . "\n" . "\t" .
+
 				"\$labels = array(" . "\n". "\t" . "\t" .
-		        '\''."name" . '\'' . '=>' . '\'' .$name . '\'' . ',' . "\n" . "\t" . "\t" .
-		        '\''."singular-name" . '\'' . '=>' . '\'' .$singular_name. '\'' . ',' . "\n" . "\t" .
+		        '\''."name" . '\'' . '=>' . '__(\'' .$name . '\')' . ',' . "\n" . "\t" . "\t" .
+		        '\''."singular-name" . '__(\'' . '=>' . '\')' .$singular_name. '\'' . ',' . "\n" . "\t" .
 		    	");"  . "\n" . "\n" . "\t" .
-			
+				
 			    "\$args = array(" . "\n" .  "\t" .  "\t" .
 		        '\''."labels".'\''.' => ' . "\$labels" . ',' . "\n" .  "\t" . "\t" .
 		        '\'' . "public" . '\'' . '=>' . $public . ',' . "\n" .  "\t" .  "\t" .
@@ -192,19 +196,22 @@ class Custom_Post_Types_Admin {
 		        '\'' . "cabability_type" . '\'' . '=>' . '\'' . $cabability_type. '\'' . ',' . "\n" .  "\t" .  "\t" .
 		        '\'' . "has_archive" . '\'' . '=>' .$has_archive. ',' . "\n" . "\t" . "\t" .
 		        '\'' . "hierarchical" . '\'' . '=>' .$hierarchical. ',' . "\n" . "\t" ."\t" .
-		        '\'' . "supports" . '\'' . '=>' . 'array(' .'\'title\', \'editor\', \'thumbnail\''. '),' . "\n" . "\t" .
+		        '\'' . "supports" . '\'' . '=>' . "\$supports" . ',' . "\n" . "\t" . "\t" .
+		    	'\'' . "description" . '\'' . '=>' ."__('". $description ."'),". "\n" . "\t" . "\t" .
+		    	'\'' . "taxonomies" . '\'' . '=>' ."array('category'),". "\n" . "\t" .
+
+		    	/*'taxonomies'          => array( 'category' ),*/
+
 		    	");" . "\n" . "\t" .
 
 		    	"register_post_type(\$slug, \$args);" . "\n" ;
-		    	
-
 
 			    file_put_contents($file, $current);
 			}
 			else{
 				die("Cannot Write To File");
 			}
-		}
+		}	
 	}
 }
 
